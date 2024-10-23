@@ -11,16 +11,29 @@
 <body>
   <script>
     // 함수 선언식
+    function add (num1, num2) {
+      return num1 + num2
+    }
+
     console.log(add(3, 9))
 
     // 함수 표현식
+    const sub = function (num1, num2) {
+      return num1 - num2
+    }
     console.log(sub(3, 9))
 
     // 기본 함수 매개변수
+    const greeting = function (name = 'Anonymous') {
+      return `Hi, ${name}`
+    }
     console.log(greeting())
 
-
+    // 여기서부터 집 중
     // 나머지 매개변수 (가변 인자)
+    const myFunc = function (params1, params2, ...restParams) {
+      return [params1, params2, restParams]
+    }  // 나머지에 대해 배열로 출력!!!
     console.log(myFunc(1, 2, 3, 4, 5))
     console.log(myFunc(1, 2))
 
@@ -31,6 +44,8 @@
       return [num1, num2, num3]
     }
 
+    console.log(threeArgs())  // 개수 부족하면 undefined로 반환
+    // 파이썬은 바로 에러뜸
 
 
     // 2. 매개변수 개수 < 인자 개수
@@ -38,9 +53,13 @@
       return 0
     }
 
+    console.log(noArgs(1,2,3));  // 0 반환. 그냥 무시한 것.
+    
     const twoArgs = function (num1, num2) {
       return [num1, num2]
     }
+
+    console.log(twoArgs(1,2,3,4))  // 문제 없이 출력됨. 그냥 두 개만 출력.
   </script>
 </body>
 
