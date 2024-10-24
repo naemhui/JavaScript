@@ -13,7 +13,7 @@
     const person = {
       name: 'Alice',
       greeting: function () { 
-        return `Hello my name is ${this.name}`
+        return `Hello my name is ${this.name}`  // this == 자기자신(person)
       },
     }
 
@@ -33,7 +33,7 @@
         return this
       }
     }
-    console.log(myObj.myFunc()) // myObj
+    console.log(myObj.myFunc()) // 여기서 리턴된 this: myObj
 
     // 2. 중첩된 함수에서의 this
     // 2.1 일반 함수
@@ -41,7 +41,7 @@
       numbers: [1, 2, 3],
       myFunc: function () {
         this.numbers.forEach(function (number) {
-          console.log(this) // window
+          console.log(this) // window (일반 함수에서의 this)
         })
       }
     }
@@ -52,7 +52,7 @@
       numbers: [1, 2, 3],
       myFunc: function () {
         this.numbers.forEach((number) => {
-          console.log(this) // myObj3
+          console.log(this) // myObj3  (화살표 함수에서의 this. 본인만의 this 없기 때문)
         })
       }
     }

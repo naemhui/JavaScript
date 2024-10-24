@@ -12,7 +12,7 @@
     const user = {
       name: 'Alice',
       'key with space': true,
-      greeting: function () {
+      greeting: function () {  // greeting이라는 메서드가 존재하는 것임. 메서드는 클래스에 속해있음.
         return 'hello'
       }
     }
@@ -38,6 +38,7 @@
     console.log('country' in user) // false
 
     // 메서드 호출
+    // 호출 시 (객체.메서드())
     console.log(user.greeting()) // hello
   </script>
 </body>
