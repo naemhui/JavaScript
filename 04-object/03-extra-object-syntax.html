@@ -13,12 +13,12 @@
     const name = 'Alice'
     const age = 30
 
-    const user1 = {
+    const user1 = {  // 얘나
       name: name,
       age: age
     }
 
-    const user2 = {
+    const user2 = {  // 얘나 똑같음
       name,
       age
     }
@@ -51,6 +51,7 @@
     console.log(bag) // {연필: 5, myproperty: 'value'}
 
 
+    ////////////// 중요💛
     // 4. 구조 분해 할당
     const userInfo = {
       firstName: 'Alice',
@@ -62,8 +63,8 @@
     // const userId = userInfo.userId
     // const email = userInfo.email
 
-    // const { firstName } = userInfo
-    const { firstName, userId, email } = userInfo
+    // const { firstName } = userInfo  // 변수를 중괄호로 감싸라
+    const { firstName, userId, email } = userInfo  // 여기서 변수 3개 탄생
 
     console.log(firstName, userId, email)
 
@@ -82,7 +83,7 @@
     // 함수 호출 시 객체를 구조 분해하여 함수의 매개변수로 전달
     printInfo(person)
 
-
+    // ...의 역할이 여러 개 있다. 여기서는 복사다!
     // 5. 전개 구문 - "객체 복사"
     const obj = { b: 2, c: 3, d: 4 }
     const newObj = { a: 1, ...obj, e: 5}
@@ -94,8 +95,8 @@
       age: 30
     }
 
-    console.log() // ['name', 'age']
-    console.log() // ['Alice', 30]
+    console.log(Object.keys(profile)) // ['name', 'age']
+    console.log(Object.values(profile)) // ['Alice', 30]
 
   </script>
 </body>
