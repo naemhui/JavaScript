@@ -50,15 +50,43 @@
     }
 
     // 1. 첫 번째 상품 정보 추출
+    const {
+      data : {
+        items: [{
+          productInfo: {
+            name: firstProductName,
+            price: firstProductPrice,
+            specs: { color: firstProductColor}
+          }
+        }]
+      }
+    } = apiResponse
 
     // 2. 페이지네이션 정보 추출
+    const {
+      data: {
+        pagination: { currentPage, totalPages }
+      }
+    } = apiResponse
 
     // 3. 재고 정보 추출
+    const {
+      data: {
+        items: [
+          { stock: stock1 },
+          { stock: stock2 }
+        ]
+      }
+    } = apiResponse
 
     // 결과
     // 첫 번째 상품: 스마트폰, 1000000원, 블랙
     // 페이지: 1/5
     // 재고 현황: 50, 30
+
+    console.log(`첫 번째 상품: ${firstProductName}, ${firstProductPrice}원, ${firstProductColor}`)
+    console.log(`페이지: ${currentPage}/${totalPages}`)
+    console.log(`재고 현황: ${stock1}, ${stock2}`)
   </script>
 </body>
 
