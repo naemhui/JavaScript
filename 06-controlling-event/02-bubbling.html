@@ -38,8 +38,9 @@
     }
 
     formElement.addEventListener('click', clickHandler1)
-    divElement.addEventListener('click', clickHandler2)
-    pElement.addEventListener('click', clickHandler3)
+    divElement.addEventListener('click', clickHandler2)  // div -> form 순서로 호출됨
+    pElement.addEventListener('click', clickHandler3)  // p -> div -> form 순서로 호출됨
+    // p 선택하면 바로 위 마지막 줄만 출력이 되어야 함. 근데 그렇지 않음.
   </script>
 </body>
 
