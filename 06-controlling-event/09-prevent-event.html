@@ -21,7 +21,7 @@
 
     h1Tag.addEventListener('copy', function (event) {
       console.log(event)
-      // event.preventDefault()
+      // event.preventDefault()  -> copy이벤트 발생하면 팝업 뜨면서 복사 안됨. 이벤트의 동작 자체를 취소시킴
       alert('복사 할 수 없습니다.')
     })
 
