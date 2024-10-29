@@ -8,14 +8,39 @@
 </head>
 
 <body>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <!-- exios 주석 해제! -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     // 1.
-    const promiseObj = axios({})
-
+    const promiseObj = axios({
+      method: 'get',
+      url: 'https://api.thecatapi.com/v1/images/search'
+    })
+    
     console.log(promiseObj) // Promise object
+    // promiseObj.then().catch()
+    promiseObj
+      .then((response) => {
+        console.log(response)  // 성공하면 이거 출력됨
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+    console.log('안녕하세요')  // 근데 response보다 이게 먼저 출력됨. 비동기 통신.
 
     // 2.
+    axios({
+      method: 'get',
+      url: 'https://api.thecatapi.com/v1/images/search'
+    })
+      .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+        
   </script>
 
 </body>
